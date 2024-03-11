@@ -1,0 +1,68 @@
+body{
+    background-color: rgba(9, 34, 34, 0.925);
+    /* font-family: 'SF Pro', sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: monospace; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    
+}
+.container{
+    background-color: rgba(162, 228, 241, 0.65);
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    
+    /* proprieta short margin per impostare tutti i margin uguali: */
+    /* margin:10rem; */
+
+    /* impostando due valori, il primo è sopra / sotto e il secondo è sinistra destra */
+    /* margin:0 auto */
+    /* impostando 3 valori corrispponde a top - right+left - bottom  */
+    /* margin:2rem 1rem 4rem; */
+
+    /* la misura in percentuale definisce la dimensione dell'elemento in base alla dimensione del suo genitore */
+    /* impostando 4 valori definiscio TOP - RIGHT - BOTTOM - LEFT */
+    /* LO STESSO PRINCIPIO SI APPLICA A PADDING  */
+}
+
+
+h1{
+
+
+    /* il rem : relative EM (EM la misura dell'altezza di un carattere relativa al font
+    ha come base la misura di default del font sul browser  */
+    font-size: 4rem;
+    /* 4 rem = misura base font *4  */
+
+
+
+}
+h2{
+    font-size: 3rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+/* rendiamo fluide le immagini per farle adattare al contenitore */
+img{
+    /* l'immagine non puo allaggarsi oltre la dimensione del suo genitore
+    al massimo sarà grande come il 100% del suo genitore */
+    max-width: 100%;
+}
+
+a{
+    font-weight: bold;
+    color: #094703;
+}
+.index a{
+    /* tutti i tag a all'interno dell'elemento con classe .index */
+    font-weight: bold;
+    color: rgb(147, 1, 147);
+}
+
+.index ul{
+    /* tutti i tag ul all'interno dell'elemento con classe index */
+    /* list-style-type: none //elimina i puntini di lista in questo caso  */
+    list-style-type: none;
+    padding:0;
+}
