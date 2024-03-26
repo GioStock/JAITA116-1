@@ -7,9 +7,14 @@
 }
 
 body{
-    background-color: #184e77;
+    background-image: url(whatsapp.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
-
+.main-nav a{
+    text-decoration-line: none;
+    transition: 0.5s;
+}
 .container{
     max-width: 100%;
     margin: 10px;
