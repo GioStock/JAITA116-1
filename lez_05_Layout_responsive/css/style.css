@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(185, 237, 185);
+    font-family:"Reddit Mono", monospace;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+#main-header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    /* per il position fixed devo dichiarare una larghezza e delle coordinate */
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.logo img{
+    width: 100px;
+}
+#hero{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/hero_vertical.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* offerte */
+#offerte{
+    margin-top: 3rem;
+}
+.offerta-wrapper{
+    margin-bottom: 1rem;
+}
+/* gallery */
+.gallery-wrapper{
+
+    display: flex;
+    /* per riallineare il contenitore forziamo un margine negativo che compensa il padding */
+    
+    
+    flex-wrap: wrap; /* se finisci lo spazio manda a capo */
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    
+    /* SOLUZIONE 2 USIAMO GAP */
+    gap: 0.5rem;
+    
+}
+.gallery-image{
+    width: 50%;
+    /* padding: 0.5rem; */
+    /* vedi gallery wrapper */
+    /* formula colonna per 2 colonne */
+    width: calc((50% - 0.5rem) + (0.5rem / 2));
+    
+
+    
+}
+/* per evitare che si formino spazi bianchi sotto l'immagine forzo display */
+.gallery-image img{
+    display: block;
+}
+.city{
+    display: none;
+    /* diverso da visibility: hidden perche display:none fa sparire l'elemento */
+}
+.offerta-image{
+    /* utilizzo del calc */
+    /* width: calc(50% - 3rem);  */
+}
+
+footer#main-footer{
+    background: rgba(203, 202, 202, 0.801);
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 10px;
+}
+/* REGOLE PER SCHERMI PIU GRANDI */
+@media screen and (min-width:992px) {
+    /* menu */
+    header#main-header{
+
+        background: #36739966;
+        align-items: center;
+        justify-content: space-between;
+        
+
+    }
+    nav.main-menu ul{
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        column-gap: 1.25rem;
+    }
+        
+    #hero{
+        background-image: url("../images/hero_horiz.jpg");
+    }
+    .offerta-wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .offerta-image{
+        width: 33.33%;
+    }
+    .offerta-text{
+        width: 66.66%;
+    }
+    .gallery-wrapper{
+        gap: 1rem;
+    }
+    .gallery-image{
+        /* width: 25%; */
+        width: calc((25% - 1rem) + (1rem / 4));
+        position: relative;
+        /* per far funzionare position:absolute devo dare position: relative al genitore */
+    }
+    .city{
+        /* ripristino la proprietà di default di display block */
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        
+        background: #ffffff66;
+        width: 100%;
+        padding: 0.25rem;
+        text-align: center;
+        /* la proprietà di positiono default e static */
+        /* position: static; */
+    }
+}
