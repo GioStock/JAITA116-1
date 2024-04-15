@@ -53,6 +53,7 @@ img{
     /* per il position fixed devo dichiarare una larghezza e delle coordinate */
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
