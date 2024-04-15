@@ -7,13 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/normalize.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header id="main-header">
+        
         <div class="logo">
-            <img src="images/logo.svg" alt="logo">
+            <svg enable-background="new 0 0 19 9.6" viewBox="0 0 19 9.6" xmlns="http://www.w3.org/2000/svg"><path d="m12.1 1.1c-4.4-2.1-6.1-.8-3.1 1.1 1.1-.3 2.8-.6 3.9-.8-.2 0-.6-.2-.8-.3zm-7.3 5.7c-2.1 1.2-3.7 1.9-4.8 2.2 1.7-.4 3.7-1.2 5.5-2.1 1.9-.9 3.6-1.9 4.9-2.8l-.5-.4c-.6-.6-.6-.5.1-.4 2 .4 3.3.6 3.3.6s-.4 1.4-1.8 3.8c-.3.6-.2.6-.3-.1l-.2-.9c-1.2.9-2.6 1.7-4.1 2.2 1.5-.4 2.2-.6 3.4-1.2-.9 2.2.5 2.9 3-.1.9-1.1 1.5-2.1 1.9-2.8 6.2-2.4 4.9-5.1-3.5-3-3 .7-5.2 1.5-6.7 2.3-5.2-4.2-2.1 2.3-.2 2.7z"/></svg>
         </div>
         <nav class="main-menu">
             <ul>
@@ -31,6 +34,11 @@
                 </li>
             </ul>
         </nav>
+        <button id="menuIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
     </header>
     <main>
         <section id="hero">
@@ -44,7 +52,7 @@
                 <!--    FINE BLOCCO OFFEETA -->
                 <div class="offerta-wrapper">
                     <div class="offerta-image">
-                        <img src="https://source.unspLash.com/600x400?desert" alt="">
+                        <img src="https://source.unspLash.com/600x400?desert" alt="desert">
                     </div>
                     <div class="offerta-text">
                         <h2>lorem, ipsum</h2>
@@ -55,7 +63,7 @@
                 </div>
                 <div class="offerta-wrapper">
                     <div class="offerta-image">
-                        <img src="https://source.unspLash.com/600x400?forest" alt="">
+                        <img src="https://source.unspLash.com/600x400?forest" alt="forest">
                     </div>
                     <div class="offerta-text">
                         <h2>lorem, ipsum</h2>
@@ -73,7 +81,7 @@
                 <h2>immagini a caso</h2>
                 <div class="gallery-wrapper">
                     <div class="gallery-image">
-                        <img src="https://source.unspLash.com/300x300?vilnus" alt="">
+                        <img src="https://source.unspLash.com/300x300?vilnus" alt="vilnus">
                         <div class="city">Vilnus</div>
                     </div>
                     <div class="gallery-image">
@@ -115,5 +123,28 @@
     <footer id="main-footer">
         Layout responsive JAITA 116
     </footer>
+    <script>
+        document.getElementById("menuIcon").addEventListener("click",addMenuClass);
+        //funzione che aggiunge o toglie classe al click
+        function addMenuClass() {
+            const header=document.getElementById("main-header");
+            header.classList.toggle("is-mobile-open");
+        }
+
+    </script>
+    <script>
+        //aggiunge una classe alla headeer quando sto scrollando
+        const nav=document.getElementById("main-header")
+        function fixNav() {
+            if (window.scrollY>918) {
+            nav.classList.add('is-scrolled');
+        }else{
+            nav.classList.remove('is-scrolled');
+        }
+        console.log(window.scrollY);
+        }
+        window.addEventListener("scroll",fixNav);
+
+    </script>
 </body>
 </html>

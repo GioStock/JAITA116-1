@@ -1,3 +1,11 @@
+/* -------------------------------------------------------------------------- */
+/*                                variabili css                               */
+/* -------------------------------------------------------------------------- */
+:root{
+    --primary-color:#ff661a;
+
+}
+
 *{
     box-sizing: border-box;
 }
@@ -5,7 +13,30 @@ body{
     background-color: rgb(185, 237, 185);
     font-family:"Reddit Mono", monospace;
 }
+a{
+    color: var(--primary-color);
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+}
+button#menuIcon{
+    /* border: none; */
+    color: #082834;
+    
+    background: transparent;
+    border: 1px solid #082834;
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 32px;
+    height: 32px;
+    /* line-height: 24px; */
+    text-align: center;
+    transition: all 0.5s linear;
 
+}
+.is-scrolled button#menuIcon{
+    color: #ff661a;
+    border: 1px solid #ff661a;
+}
 .container{
     width: 90%;
     margin: auto;
@@ -23,12 +54,72 @@ img{
     top: 0;
     left: 0;
     width: 100%;
-    
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}
+#main-header.is-scrolled{
+    background-color: #244C5A;
 }
 
-.logo img{
+/* .logo img{
     width: 100px;
+    /* z-index: 99px; 
+} */
+.logo svg{
+    height: 50px;
+    fill: rgb(17, 227, 185);
+    stroke: #082834;
+    stroke-width: 2%;
 }
+.main-menu{
+    display: none;
+    
+}
+.main-menu ul{
+    list-style-type: none;
+    /* font-size: 55px; */
+}
+/* REGOLE PER MENU APERTO */
+#main-header.is-mobile-open .main-menu{
+    
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba(139, 207, 200, 0.9);
+    
+    width: 100%;
+    height: 100%;
+    
+    /* sottraggo l'alte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logo, #menuIcon{
+    z-index: 1;
+}
+
+/* #main-header.is-mobile-open .main-menu ul li{
+    padding: 1rem;
+    text-align: center;
+} */
+
+/* alternativa con flexbox invertendo gli assi */
+#main-header.is-mobile-open .main-menu ul{
+    display: flex;
+    height: 100%;
+    gap: 1.5rem;
+    /* inverto gli assi */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
 #hero{
     
     display: flex;
@@ -95,6 +186,13 @@ footer#main-footer{
 /* REGOLE PER SCHERMI PIU GRANDI */
 @media screen and (min-width:992px) {
     /* menu */
+    .main-menu{
+        display: block;
+
+    }
+    #menuIcon{
+        display: none;
+    }
     header#main-header{
 
         background: #36739966;
@@ -103,12 +201,20 @@ footer#main-footer{
         
 
     }
+    .is-scrolled .main-menu a{
+        color: var(--primary-color);
+    }
+    .main-menu a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
     nav.main-menu ul{
         display: flex;
         list-style-type: none;
         margin: 0;
         padding: 0;
         column-gap: 1.25rem;
+        
     }
         
     #hero{
@@ -132,6 +238,9 @@ footer#main-footer{
         width: calc((25% - 1rem) + (1rem / 4));
         position: relative;
         /* per far funzionare position:absolute devo dare position: relative al genitore */
+    }
+    .gallery-image img{
+        width: 100%;
     }
     .city{
         /* ripristino la proprietà di default di display block */
